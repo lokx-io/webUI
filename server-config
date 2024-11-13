@@ -1,4 +1,4 @@
-#Use this to configure vduweb52
+#Use this to configure web server from fresh install
 #Install node
 #Details from https://nodejs.org/en/download/package-manager
 # installs nvm (Node Version Manager)
