@@ -1,0 +1,41 @@
+import React from 'react';
+import logo from './logo-adavault.svg';
+import './App.css';
+import { useState } from 'react';
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count+1);
+    alert(`You clicked me ${count} times!`);
+  }
+  return (
+    <button onClick={handleClick}>Load wallet</button>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        Test
+        <MyButton />
+        <p>This is a paragraph</p>
+      </header>
+    </div>
+  );
+}
+
+export default App;

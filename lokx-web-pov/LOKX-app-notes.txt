@@ -1,0 +1,12 @@
+LOKXpovApp
+    AppHeaderBar
+        Logo (returns to homepage)
+        Wallet (open wallet dialog floating in front of page)
+        Settings (opens settings dialog)
+    AssetMainDialog
+        AssetSearchBar
+            SearchBox (accepts user input to search assets)
+            AddAssetButton (add asset dialog)
+        AssetSortableList
+            AssetListSortableHeader (sort by columns)
+            AssetList {asset, conditions, recipient, type}
