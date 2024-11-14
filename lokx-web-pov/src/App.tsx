@@ -12,22 +12,29 @@ function MyWallet() {
   return (
     <button onClick={handleClick}>Load wallet</button>
   );
-}
+} 
 
 function AssetRow({ asset }) {
   return (
     <tr>
-      <td>{asset.assetName}</td>
-      <td>{asset.assetConditions}</td>
-      <td>{asset.assetRecipient}</td>
-      <td>{asset.assetType}</td>
+      <td style={{padding: '10px'}}>{asset.assetName}</td>
+      <td style={{padding: '10px'}}>{asset.assetConditions}</td>
+      <td style={{padding: '10px'}}>{asset.assetRecipient}</td>
+      <td style={{padding: '10px'}}>{asset.assetType}</td>
     </tr>
   );
 }
 
-function AssetSortableList({ assets }) {
+function AssetSortableList({ assets, assetSearchBarText }) {
   const rows : any[] = [];
   assets.forEach((asset) => {
+    if (
+      asset.assetName.toLowerCase().indexOf(
+        assetSearchBarText.toLowerCase()
+      ) === -1
+    ) {
+      return;
+    }
     rows.push(
       <AssetRow asset={asset} key={asset.assetName} />
     );
@@ -37,10 +44,10 @@ function AssetSortableList({ assets }) {
     <table>
       <thead>
         <tr>
-          <th>Asset</th>
-          <th>Conditions</th>
-          <th>Recipient</th>
-          <th>Type</th>
+          <th style={{padding: '10px'}}>Asset</th>
+          <th style={{padding: '10px'}}>Conditions</th>
+          <th style={{padding: '10px'}}>Recipient</th>
+          <th style={{padding: '10px'}}>Type</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>
@@ -48,22 +55,30 @@ function AssetSortableList({ assets }) {
   );
 }
 
-function AssetSearchBar() {
+function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
   return (
     <div>
-    Icon
     <form>
-      <input type="text" placeholder="Search..." />
+      <img src={logo} className="App-logo" alt="logo" />
+      <input style={{width: '250px', padding: '5px' }}
+        type="text"
+        value={assetSearchBarText}
+        placeholder="Search Asset..."
+        onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
     </form>
     </div>
   );
 }
 
 function AssetMainDialog({ assets }) {
+  const [assetSearchBarText, setAssetSearchBarText] = useState('');
   return (
     <div>
-      <AssetSearchBar />
-      <AssetSortableList assets={assets} />
+      <AssetSearchBar
+        assetSearchBarText={assetSearchBarText}
+        onAssetSearchBarTextChange={setAssetSearchBarText}
+      />
+      <AssetSortableList assets={assets} assetSearchBarText={assetSearchBarText}/>
     </div>
   );
 }
@@ -93,7 +108,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        Under development
       </header>
       <div style={{justifyContent:'center', alignItems:'center', height: '10vh'}}>
         <MenuBar />
