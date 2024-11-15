@@ -3,26 +3,25 @@
 }
 
 .App-logo {
-  height: 5vmin;
-  pointer-events: none;
-  text-align: left;
-  padding: 10px;
+  height: 12vmin;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-wallet {
+  height: 40px;
+  width: 100px;
 }
 
-.App-header {
+.Menu-bar {
   background-color: white;
   border: 2px solid black;
-  min-height: 10vh;
+  min-height: fit-content;
   min-width: 100%;
-  justify-content: left;
   font-size: calc(10px + 2vmin);
   color: black;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  align-items: center;
+  padding: 20px;
 }
 
 .App-link {
@@ -54,12 +53,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   padding: 10px 10px 10px 50px;
-}
-
-.Menu-bar {
-  justify-Content: center;
-  align-items: center;
-  height: 10vh;
 }
 
 .Asset-div {

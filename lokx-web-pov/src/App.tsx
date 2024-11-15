@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo-adavault.svg';
+import logo from './Lokx-logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { format } from 'path';
@@ -11,7 +11,7 @@ function MyWallet() {
     alert(`You clicked me ${count} times!`);
   }
   return (
-    <button onClick={handleClick}>Load wallet</button>
+    <button className="App-wallet" onClick={handleClick}>Load wallet</button>
   );
 } 
 
@@ -89,7 +89,8 @@ function AssetMainDialog({ assets }) {
 
 function MenuBar() {
   return (
-    <div>
+    <div className="Menu-bar">
+      <img className="App-logo" src={logo} alt="LOKX.io" />
       <MyWallet />
     </div>
   );
@@ -111,15 +112,17 @@ const ASSETS = [
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Under development
+      <header>
       </header>
-      <div className="Menu-bar">
-        <MenuBar />
-      </div>
-      <div className="Asset-main-dialog">
-        <AssetMainDialog assets={ASSETS} />
-      </div>
+      <body>
+        <div>
+          <MenuBar />
+        </div>
+        <div className="Asset-main-dialog">
+          <AssetMainDialog assets={ASSETS} />
+        </div>
+      </body>
     </div>
+
   )
 }
