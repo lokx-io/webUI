@@ -16,19 +16,82 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
+  border: 2px solid black;
   min-height: 10vh;
   min-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
   justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Vertical-center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Search-bar {
+  position: relative;
+  height: 60px;
+  padding: 2%;
+}
+
+.Search-input {
+  width: 140%;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('./search-icon.svg');
+  background-position: 2px 2px; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10px 10px 10px 50px;
+}
+
+.Menu-bar {
+  justify-Content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.Asset-div {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.Asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1pt solid black;
+}
+
+.Asset-table-row {
+  border-bottom: 1pt solid black;
+}
+
+.Asset-table-d {
+  padding:10px;
+}
+
+.Asset-main-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40%;
+  min-height: 60%;
+  border-radius: 20px;
+  border: 2px solid black;
 }
 
 @keyframes App-logo-spin {

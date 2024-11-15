@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo-adavault.svg';
 import './App.css';
 import { useState } from 'react';
+import { format } from 'path';
 
 function MyWallet() {
   const [count, setCount] = useState(0);
@@ -16,11 +17,11 @@ function MyWallet() {
 
 function AssetRow({ asset }) {
   return (
-    <tr>
-      <td style={{padding: '10px'}}>{asset.assetName}</td>
-      <td style={{padding: '10px'}}>{asset.assetConditions}</td>
-      <td style={{padding: '10px'}}>{asset.assetRecipient}</td>
-      <td style={{padding: '10px'}}>{asset.assetType}</td>
+    <tr className='Asset-table-row'>
+      <td className='Asset-table-d'>{asset.assetName}</td>
+      <td className='Asset-table-d'>{asset.assetConditions}</td>
+      <td className='Asset-table-d'>{asset.assetRecipient}</td>
+      <td className='Asset-table-d'>{asset.assetType}</td>
     </tr>
   );
 }
@@ -41,26 +42,29 @@ function AssetSortableList({ assets, assetSearchBarText }) {
   });
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th style={{padding: '10px'}}>Asset</th>
-          <th style={{padding: '10px'}}>Conditions</th>
-          <th style={{padding: '10px'}}>Recipient</th>
-          <th style={{padding: '10px'}}>Type</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
+    <div className="Asset-div">
+      <table className="Asset-table">
+        <thead>
+          <tr className='Asset-table-row'>
+            <th className='Asset-table-d'>Asset</th>
+            <th className='Asset-table-d'>Conditions</th>
+            <th className='Asset-table-d'>Recipient</th>
+            <th className='Asset-table-d'>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
 function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
   return (
-    <div>
-    <form>
-      <img src={logo} className="App-logo" alt="logo" />
-      <input style={{width: '250px', padding: '5px' }}
+    <div className="Search-bar">
+    <form className="Vertical-center">
+      <input className="Search-input"
         type="text"
         value={assetSearchBarText}
         placeholder="Search Asset..."
@@ -110,10 +114,10 @@ export default function App() {
       <header className="App-header">
         Under development
       </header>
-      <div style={{justifyContent:'center', alignItems:'center', height: '10vh'}}>
+      <div className="Menu-bar">
         <MenuBar />
       </div>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '50vh'}}>
+      <div className="Asset-main-dialog">
         <AssetMainDialog assets={ASSETS} />
       </div>
     </div>
