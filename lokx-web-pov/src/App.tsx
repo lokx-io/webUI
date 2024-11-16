@@ -17,6 +17,19 @@ function MyWallet() {
   );
 } 
 
+function AddAsset() {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count+1);
+    alert(`You clicked me ${count} times!`);
+  }
+  return (
+    <div>
+      <button className="Add-button d-block ml-auto" onClick={handleClick}>Add Asset</button>
+    </div>
+  );
+} 
+
 function AssetRow({ asset }) {
   return (
     <tr className='Asset-table-row'>
@@ -65,13 +78,14 @@ function AssetSortableList({ assets, assetSearchBarText }) {
 function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
   return (
     <div className="Search-bar">
-    <form className="Vertical-center">
-      <input className="Search-input"
-        type="text"
-        value={assetSearchBarText}
-        placeholder="Search Asset..."
-        onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
-    </form>
+      <form>
+        <input className="Search-input"
+          type="text"
+          value={assetSearchBarText}
+          placeholder="Search Asset..."
+          onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
+      </form>
+      <AddAsset />
     </div>
   );
 }
@@ -109,7 +123,7 @@ const ASSETS = [
   { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
   { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
   { assetName: "Identity Card", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
-  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "Released", assetType: "USDJ" }
+  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA" }
 ];
 
 export default function App() {

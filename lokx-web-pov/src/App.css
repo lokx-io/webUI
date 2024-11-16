@@ -35,20 +35,21 @@
 }
 
 .Search-bar {
-  position: relative;
-  height: 60px;
   padding: 20px;
+  min-height: fit-content;
+  width: fit-content%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .Search-input {
-  width: 140%;
+  width: 100%;
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 8px;
   font-size: 16px;
   background-color: white;
-  background-image: url('./icon-search.svg');
-  background-position: 2px 2px; 
+  background-image: url('./icon-search.svg'); 
   background-repeat: no-repeat;
   background-size: contain;
   padding: 10px 10px 10px 50px;
@@ -62,6 +63,14 @@
   padding: 10px 10px 10px 10px;
 }
 
+.Add-button{
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+}
+
 .Asset-div {
   padding-left: 20px;
   padding-right: 20px;
@@ -69,6 +78,7 @@
 }
 
 .Asset-table {
+  position: relative;
   width: 100%;
   border-collapse: collapse;
   border-bottom: 1pt solid black;
@@ -89,7 +99,8 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 40%;
-  min-height: 60%;
+  min-height: 60vh;
+  height: fit-content;
   border-radius: 20px;
   border: 2px solid black;
 }
