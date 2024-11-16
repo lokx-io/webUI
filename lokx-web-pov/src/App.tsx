@@ -25,7 +25,7 @@ function AddAsset() {
   }
   return (
     <div>
-      <button className="Add-button d-block ml-auto" onClick={handleClick}>Add Asset</button>
+      <button className="Add-button d-block ml-auto mr-0" onClick={handleClick}>Add Asset</button>
     </div>
   );
 } 
@@ -38,7 +38,7 @@ function AppSettings() {
   }
   return (
     <div>
-      <button type="submit" className="Settings-button d-block mr-0 ml-auto" onClick={handleClick}>
+      <button type="submit" className="Settings-button d-block mr-60 ml-auto" onClick={handleClick}>
         <img src={iconSettings} alt="Settings" />
       </button>
     </div>

@@ -36,8 +36,9 @@
 
 .Search-bar {
   padding: 20px;
+  box-sizing: border-box;
   min-height: fit-content;
-  width: fit-content;
+  width:100%;
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
@@ -64,6 +65,7 @@
 }
 
 .Add-button{
+  box-sizing: border-box;
   border: 2px solid black;
   background-color: white;
   border-radius: 8px;
@@ -111,6 +113,9 @@
 }
 
 .mr-0 {
+  margin-right: 0px;
+}
+.mr-60 {
   margin-right: 60px;
 }
 .ml-auto {
