@@ -30,6 +30,21 @@ function AddAsset() {
   );
 } 
 
+function AppSettings() {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count+1);
+    alert(`You clicked me ${count} times!`);
+  }
+  return (
+    <div>
+      <button type="submit" className="Settings-button d-block mr-0 ml-auto" onClick={handleClick}>
+        <img src={iconSettings} alt="Settings" />
+      </button>
+    </div>
+  )
+}
+
 function AssetRow({ asset }) {
   return (
     <tr className='Asset-table-row'>
@@ -108,7 +123,7 @@ function MenuBar() {
     <div className="Menu-bar">
       <img className="App-logo" src={logo} alt="LOKX.io" />
       <MyWallet />
-      <img src={iconSettings} className="d-block mr-0 ml-auto" alt="Settings" />
+      <AppSettings />
     </div>
   );
 }

@@ -71,6 +71,11 @@
   padding: 10px 10px 10px 10px;
 }
 
+.Settings-button{
+  background-color: white;
+  border: 0px;
+}
+
 .Asset-div {
   padding-left: 20px;
   padding-right: 20px;
