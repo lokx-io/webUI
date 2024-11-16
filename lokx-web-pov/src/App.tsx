@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './Lokx-logo.svg';
+import iconSettings from './icon-settings.svg';
 import './App.css';
 import { useState } from 'react';
 import { format } from 'path';
+import { url } from 'inspector';
 
 function MyWallet() {
   const [count, setCount] = useState(0);
@@ -11,7 +13,7 @@ function MyWallet() {
     alert(`You clicked me ${count} times!`);
   }
   return (
-    <button className="App-wallet" onClick={handleClick}>Load wallet</button>
+    <button className="Wallet-button d-block ml-auto" onClick={handleClick}>Connect wallet</button>
   );
 } 
 
@@ -92,6 +94,7 @@ function MenuBar() {
     <div className="Menu-bar">
       <img className="App-logo" src={logo} alt="LOKX.io" />
       <MyWallet />
+      <img src={iconSettings} className="d-block mr-0 ml-auto" alt="Settings" />
     </div>
   );
 }

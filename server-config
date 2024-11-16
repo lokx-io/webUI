@@ -13,3 +13,14 @@ npm -v # should print `10.9.0`
 #Create the react app using typescript template
 #Details from https://create-react-app.dev/docs/adding-typescript
 npx create-react-app lokx-web-pov --template typescript
+
+#Typescript needs and mod to tsconfig.json to set "noImplicitAny": true and remove the ANY type errors
+#Details from https://medium.com/front-end-weekly/typescript-error-ts7031-makes-me-go-huh-c81cf76c829b
+
+#Consider adding a framework to speed up dev work like
+# 1) https://www.chakra-ui.com
+# 2) https://mui.com/material-ui/
+
+#Helpful articles
+# 1) https://react.dev/learn/thinking-in-react
+

@@ -18,7 +18,7 @@
   font-size: calc(10px + 2vmin);
   color: black;
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 6fr 1fr 1fr;
   align-items: center;
   padding: 10px;
 }
@@ -47,11 +47,19 @@
   border-radius: 8px;
   font-size: 16px;
   background-color: white;
-  background-image: url('./search-icon.svg');
+  background-image: url('./icon-search.svg');
   background-position: 2px 2px; 
   background-repeat: no-repeat;
   background-size: contain;
   padding: 10px 10px 10px 50px;
+}
+
+.Wallet-button{
+  border: 3px solid black;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
 }
 
 .Asset-div {
@@ -84,6 +92,16 @@
   min-height: 60%;
   border-radius: 20px;
   border: 2px solid black;
+}
+
+.mr-0 {
+  margin-right: 60px;
+}
+.ml-auto {
+  margin-left:auto;
+}
+.d-block {
+  display:block;
 }
 
 @keyframes App-logo-spin {
