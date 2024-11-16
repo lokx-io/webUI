@@ -97,7 +97,7 @@ function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
         <input className="Search-input"
           type="text"
           value={assetSearchBarText}
-          placeholder="Search Asset..."
+          placeholder="Search"
           onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
       </form>
       <AddAsset />
