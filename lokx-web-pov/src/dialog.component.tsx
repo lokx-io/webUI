@@ -9,6 +9,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import AddIcon from "@mui/icons-material/Add";
 import { blue } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 
 interface SimpleDialogProps {
   onClose: Function;
@@ -38,7 +39,7 @@ export function SimpleDialog(props: SimpleDialogProps) {
             key={usersAssets}
           >
             <ListItemAvatar>
-              <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
+              <Avatar sx={{ bgcolor: blue[900], color: grey[50] }}>
                 <DescriptionOutlinedIcon />
               </Avatar>
             </ListItemAvatar>

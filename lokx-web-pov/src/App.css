@@ -133,6 +133,16 @@ dialog::backdrop {
   padding:10px;
 }
 
+.Asset-table-link {
+  padding:10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out;
+}
+
+.Asset-table-link:hover {
+  background-color: #99c6f6;
+}
+
 .Asset-main-dialog {
   position: fixed;
   top: 50%;

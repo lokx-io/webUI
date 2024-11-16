@@ -17,7 +17,7 @@ function MyWallet() {
   const [count, setCount] = useState(0);
   function handleClick() {
     setCount(count+1);
-    alert(`You clicked me ${count} times!`);
+    alert(`Stub for Wallet dialog to be added. You clicked me ${count} times!`);
   }
   return (
     <button className="Wallet-button d-block ml-auto" onClick={handleClick}>Connect wallet</button>
@@ -25,11 +25,6 @@ function MyWallet() {
 } 
 
 function AddAsset() {
-  const [count, setCount] = useState(0);
-  function handleClick() {
-    setCount(count+1);
-    alert(`You clicked me ${count} times!`);
-  }
   const { open, isOpen, results, close, params } = useDialog<
   string[],
   string
@@ -52,13 +47,13 @@ const handleClose = (value: string) => {
       <SimpleDialog values={params} open={isOpen} onClose={handleClose} />
     </div>
   );
-} 
+};
 
 function AppSettings() {
   const [count, setCount] = useState(0);
   function handleClick() {
     setCount(count+1);
-    alert(`You clicked me ${count} times!`);
+    alert(`Stub for App Settings dialog to be added. You clicked me ${count} times!`);
   }
   return (
     <div>
@@ -70,9 +65,14 @@ function AppSettings() {
 }
 
 function AssetRow({ asset }) {
+    const [count, setCount] = useState(0);
+    function handleClick() {
+      setCount(count+1);
+      alert(`You clicked me ${count} times!\nThe data for this asset is:\nName: ${asset.assetName}\nConditions: ${asset.assetConditions}\nRecipient: ${asset.assetRecipient}\nType: ${asset.assetType}\nData: ${asset.data}`);
+    }
   return (
     <tr className='Asset-table-row'>
-      <td className='Asset-table-d'>{asset.assetName}</td>
+      <td className='Asset-table-link' onClick={handleClick}>{asset.assetName}</td>
       <td className='Asset-table-d'>{asset.assetConditions}</td>
       <td className='Asset-table-d'>{asset.assetRecipient}</td>
       <td className='Asset-table-d'>{asset.assetType}</td>
@@ -154,15 +154,15 @@ function MenuBar() {
 
 
 const ASSETS = [
-  { assetName: "Child Trust Fund", assetConditions: "30-JUN-2030", assetRecipient: "$MARK", assetType: "ADA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
-  { assetName: "Savings Account", assetConditions: "02-FEB-2027", assetRecipient: "$JOHN", assetType: "ADA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
-  { assetName: "Will and Testament", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
-  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "BTC", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
-  { assetName: "Birth Certificate", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
-  { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
-  { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
-  { assetName: "Identity Card", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
-  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  }
+  { assetName: "Child Trust Fund", assetConditions: "30-JUN-2030", assetRecipient: "$MARK", assetType: "ADA", data: "1-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Savings Account", assetConditions: "02-FEB-2027", assetRecipient: "$JOHN", assetType: "ADA", data: "2-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Will and Testament", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "Document", data: "3-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "BTC", data: "4-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Birth Certificate", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "5-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "6-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "7-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Identity Card", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "8-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA", data: "9-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  }
 ];
 
 export default function App() {
