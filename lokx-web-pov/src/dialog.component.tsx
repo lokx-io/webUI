@@ -6,6 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import PersonIcon from "@mui/icons-material/Person";
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import AddIcon from "@mui/icons-material/Add";
 import { blue } from "@mui/material/colors";
 
@@ -38,7 +39,7 @@ export function SimpleDialog(props: SimpleDialogProps) {
           >
             <ListItemAvatar>
               <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
-                <PersonIcon />
+                <DescriptionOutlinedIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary={usersAssets} />
@@ -55,7 +56,7 @@ export function SimpleDialog(props: SimpleDialogProps) {
               <AddIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary="Add asset" />
+          <ListItemText primary="New asset" />
         </ListItem>
       </List>
     </Dialog>

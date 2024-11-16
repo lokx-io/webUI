@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import { useDialog } from "react-dialog-hook";
 import { SimpleDialog } from "./dialog.component.tsx";
 
-const usersAssets = ["Asset 1", "Asset2", "Asset3"];
+const usersAssets = ["Asset 1", "Asset2", "Asset3", "Family Will and Testament"];
 
 function MyWallet() {
   const [count, setCount] = useState(0);
@@ -63,7 +63,7 @@ function AppSettings() {
   return (
     <div>
       <button type="submit" className="Settings-button d-block mr-60 ml-auto" onClick={handleClick}>
-        <img src={iconSettings} alt="Settings" />
+        <img src={iconSettings} height="42px" alt="Settings" />
       </button>
     </div>
   )
@@ -154,15 +154,15 @@ function MenuBar() {
 
 
 const ASSETS = [
-  { assetName: "Child Trust Fund", assetConditions: "30-JUN-2030", assetRecipient: "$MARK", assetType: "ADA" },
-  { assetName: "Savings Account", assetConditions: "02-FEB-2027", assetRecipient: "$JOHN", assetType: "ADA" },
-  { assetName: "Will and Testament", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "Document" },
-  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "BTC" },
-  { assetName: "Birth Certificate", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
-  { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
-  { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
-  { assetName: "Identity Card", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document" },
-  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA" }
+  { assetName: "Child Trust Fund", assetConditions: "30-JUN-2030", assetRecipient: "$MARK", assetType: "ADA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Savings Account", assetConditions: "02-FEB-2027", assetRecipient: "$JOHN", assetType: "ADA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Will and Testament", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "BTC", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Birth Certificate", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Identity Card", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
+  { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA", data: "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  }
 ];
 
 export default function App() {

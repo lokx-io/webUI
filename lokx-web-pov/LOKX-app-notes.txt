@@ -13,3 +13,7 @@ LOKXpovApp
             AssetListSortableHeader (sort by columns)
             AssetList {asset, conditions, recipient, type}
 
+
+Use material UI (MUI) for development of the application
+
+Material icons are here https://mui.com/material-ui/material-icons/?theme=Outlined&query=document
