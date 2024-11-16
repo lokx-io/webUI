@@ -1,10 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import logo from './Lokx-logo.svg';
 import iconSettings from './icon-settings.svg';
 import './App.css';
 import { useState } from 'react';
 import { format } from 'path';
 import { url } from 'inspector';
+
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import { useDialog } from "react-dialog-hook";
+import { SimpleDialog } from "./dialog.component.tsx";
+
+const usersAssets = ["Asset 1", "Asset2", "Asset3"];
 
 function MyWallet() {
   const [count, setCount] = useState(0);
@@ -23,9 +30,26 @@ function AddAsset() {
     setCount(count+1);
     alert(`You clicked me ${count} times!`);
   }
+  const { open, isOpen, results, close, params } = useDialog<
+  string[],
+  string
+>();
+
+const handleClickOpen = async () => {
+  // Option to pass list as params when modal opens
+  const result = await open(usersAssets);
+  console.log("RESULT: ", result);
+};
+
+const handleClose = (value: string) => {
+  close(value);
+};
   return (
     <div>
-      <button className="Add-button d-block ml-auto mr-0" onClick={handleClick}>Add Asset</button>
+      <button className="Add-button d-block ml-auto mr-0" onClick={handleClickOpen}>
+        Add Asset
+      </button>
+      <SimpleDialog values={params} open={isOpen} onClose={handleClose} />
     </div>
   );
 } 
@@ -142,6 +166,7 @@ const ASSETS = [
 ];
 
 export default function App() {
+
   return (
     <div className="App">
       <header>
