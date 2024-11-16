@@ -125,8 +125,18 @@ dialog::backdrop {
   border-bottom: 1pt solid black;
 }
 
+.Asset-table-head {
+  border-bottom: 1pt solid black;
+}
+
 .Asset-table-row {
   border-bottom: 1pt solid black;
+  cursor: pointer;
+  transition: background-color 0.25s ease-out;
+}
+
+.Asset-table-row:hover {
+  background-color: #e5f1ff;
 }
 
 .Asset-table-d {
@@ -135,12 +145,6 @@ dialog::backdrop {
 
 .Asset-table-link {
   padding:10px;
-  cursor: pointer;
-  transition: background-color 0.25s ease-out;
-}
-
-.Asset-table-link:hover {
-  background-color: #99c6f6;
 }
 
 .Asset-main-dialog {

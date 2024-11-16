@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { format } from 'path';
 import { url } from 'inspector';
 
+import "@fontsource/noto-sans";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useDialog } from "react-dialog-hook";
@@ -71,8 +72,8 @@ function AssetRow({ asset }) {
       alert(`You clicked me ${count} times!\nThe data for this asset is:\nName: ${asset.assetName}\nConditions: ${asset.assetConditions}\nRecipient: ${asset.assetRecipient}\nType: ${asset.assetType}\nData: ${asset.data}`);
     }
   return (
-    <tr className='Asset-table-row'>
-      <td className='Asset-table-link' onClick={handleClick}>{asset.assetName}</td>
+    <tr className='Asset-table-row' onClick={handleClick}>
+      <td className='Asset-table-d'>{asset.assetName}</td>
       <td className='Asset-table-d'>{asset.assetConditions}</td>
       <td className='Asset-table-d'>{asset.assetRecipient}</td>
       <td className='Asset-table-d'>{asset.assetType}</td>
@@ -99,7 +100,7 @@ function AssetSortableList({ assets, assetSearchBarText }) {
     <div className="Asset-div">
       <table className="Asset-table">
         <thead>
-          <tr className='Asset-table-row'>
+          <tr className='Asset-table-head'>
             <th className='Asset-table-d'>Asset</th>
             <th className='Asset-table-d'>Conditions</th>
             <th className='Asset-table-d'>Recipient</th>
