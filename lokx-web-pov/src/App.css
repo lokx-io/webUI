@@ -173,9 +173,16 @@ dialog::backdrop {
   display:block;
 }
 
-.material-icons {
+.material-icon-cancel {
   display: inline-flex;
   align-items: center;
+  padding-left: 4px;
+}
+
+.material-icon-settings {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 20px;
 }
 
 @keyframes App-logo-spin {

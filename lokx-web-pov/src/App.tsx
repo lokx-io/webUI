@@ -2,6 +2,7 @@ import * as React from 'react';
 import logo from './Lokx-logo.svg';
 import iconSettings from './icon-settings.svg';
 import CancelIcon from '@mui/icons-material/Cancel';
+import SettingsIcon from '@mui/icons-material/Settings';
 import './App.css';
 import { useState } from 'react';
 import { format } from 'path';
@@ -11,36 +12,55 @@ import "@fontsource/noto-sans";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useDialog } from "react-dialog-hook";
-import { SimpleDialog } from "./dialog.component.tsx";
+import { SimpleDialog, WalletDialog } from "./dialog.component.tsx";
+import { Apps } from '@mui/icons-material';
 
 const usersAssets = ["Asset 1", "Asset2", "Asset3", "Family Will and Testament"];
+const walletChoices = ["Eternl", "Nami", "Lace"];
+var userWallet = "Connect Wallet!"
 
-function MyWallet() {
-  const [count, setCount] = useState(0);
-  function handleClick() {
-    setCount(count+1);
-    alert(`Stub for Wallet dialog to be added. You clicked me ${count} times!`);
-  }
+function MyWallet () {
+
+  const { open, isOpen, results, close, params } = useDialog<
+    string[],
+    string
+    >();
+
+  const handleClickOpen = async () => {
+    // Option to pass list as params when modal opens
+    userWallet = await open(walletChoices);
+    alert(`Stub for Wallet dialog to be added. Wallet is set to ${userWallet}`);
+    };
+
+  const handleClose = (value: string) => {
+    close(value);
+    };
+
   return (
-    <button className="Wallet-button d-block ml-auto" onClick={handleClick}>Connect wallet</button>
+    <div>
+      <button className="Wallet-button d-block ml-auto" onClick={handleClickOpen}>{userWallet}
+      </button>
+      <WalletDialog values={params} open={isOpen} onClose={handleClose} />
+    </div>
   );
 } 
 
 function AddAsset() {
   const { open, isOpen, results, close, params } = useDialog<
-  string[],
-  string
->();
+    string[],
+    string
+    >();
 
-const handleClickOpen = async () => {
-  // Option to pass list as params when modal opens
-  const result = await open(usersAssets);
-  console.log("RESULT: ", result);
-};
+  const handleClickOpen = async () => {
+    // Option to pass list as params when modal opens
+    const result = await open(usersAssets);
+    console.log("RESULT: ", result);
+    };
 
-const handleClose = (value: string) => {
-  close(value);
-};
+  const handleClose = (value: string) => {
+    close(value);
+    };
+
   return (
     <div>
       <button className="Add-button d-block ml-auto mr-0" onClick={handleClickOpen}>
@@ -58,10 +78,13 @@ function AppSettings() {
     alert(`Stub for App Settings dialog to be added. You clicked me ${count} times!`);
   }
   return (
-    <div>
-      <button type="submit" className="Settings-button d-block mr-60 ml-auto" onClick={handleClick}>
-        <img src={iconSettings} height="42px" alt="Settings" />
-      </button>
+    <div className="material-icon-settings">
+    <SettingsIcon
+      fontSize='large'
+      onClick={() => {
+        handleClick();
+      }}
+    />
     </div>
   )
 }
@@ -126,7 +149,7 @@ function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
           placeholder="Search"
           onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
       </form>
-      <div className="material-icons">
+      <div className="material-icon-cancel">
         <CancelIcon
           fontSize='large'
           onClick={() => {
@@ -153,7 +176,7 @@ function AssetMainDialog({ assets }) {
 }
 
 function MenuBar() {
-  return (
+   return (
     <div className="Menu-bar">
       <img className="App-logo" src={logo} alt="LOKX.io" />
       <MyWallet />
