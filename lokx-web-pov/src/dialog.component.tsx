@@ -29,7 +29,12 @@ export function SimpleDialog(props: SimpleDialogProps) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog
+      PaperProps={{ sx: { borderRadius: "20px" } }}
+      onClose={handleClose}
+      open={open}
+      maxWidth="sm"
+      fullWidth="true">
       <DialogTitle>Choose an asset</DialogTitle>
       <List sx={{ pt: 0 }}>
         {values?.map((usersAssets) => (
