@@ -158,7 +158,7 @@ const ASSETS = [
   { assetName: "Child Trust Fund", assetConditions: "30-JUN-2030", assetRecipient: "$MARK", assetType: "ADA", data: "1-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
   { assetName: "Savings Account", assetConditions: "02-FEB-2027", assetRecipient: "$JOHN", assetType: "ADA", data: "2-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
   { assetName: "Will and Testament", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "Document", data: "3-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
-  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "BTC", data: "4-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
+  { assetName: "Family Trust Fund", assetConditions: "Deceased", assetRecipient: "$PARTNER", assetType: "rsBTC", data: "4-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" },
   { assetName: "Birth Certificate", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "5-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
   { assetName: "Passport", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "6-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
   { assetName: "Driving License", assetConditions: "On Demand", assetRecipient: "N/A", assetType: "Document", data: "7-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  },
