@@ -60,7 +60,7 @@ dialog::backdrop {
   min-height: fit-content;
   width:100%;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 7fr 1fr 2fr;
 }
 
 .Search-input {
@@ -171,6 +171,11 @@ dialog::backdrop {
 }
 .d-block {
   display:block;
+}
+
+.material-icons {
+  display: inline-flex;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {

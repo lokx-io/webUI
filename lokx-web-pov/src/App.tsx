@@ -1,6 +1,7 @@
 import * as React from 'react';
 import logo from './Lokx-logo.svg';
 import iconSettings from './icon-settings.svg';
+import CancelIcon from '@mui/icons-material/Cancel';
 import './App.css';
 import { useState } from 'react';
 import { format } from 'path';
@@ -125,6 +126,14 @@ function AssetSearchBar({assetSearchBarText, onAssetSearchBarTextChange}) {
           placeholder="Search"
           onChange={(e) => onAssetSearchBarTextChange(e.target.value)}/>
       </form>
+      <div className="material-icons">
+        <CancelIcon
+          fontSize='large'
+          onClick={() => {
+            {onAssetSearchBarTextChange("")}
+          }}
+        />
+      </div>
       <AddAsset />
     </div>
   );
