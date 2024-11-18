@@ -15,11 +15,8 @@ import { useDialog } from "react-dialog-hook";
 import { SimpleDialog, WalletDialog } from "./dialog.component.tsx";
 import { Apps } from '@mui/icons-material';
 
-const usersAssets = ["Asset 1", "Asset2", "Asset3", "Family Will and Testament"];
-const walletChoices = ["Eternl", "Nami", "Lace"];
-var userWallet = "Connect Wallet!"
 
-function MyWallet () {
+function MyWallet ({userWallet, onUserWalletChange}) {
 
   const { open, isOpen, results, close, params } = useDialog<
     string[],
@@ -34,11 +31,13 @@ function MyWallet () {
 
   const handleClose = (value: string) => {
     close(value);
+    alert(`Stub for Wallet dialog to be added. Wallet is set to ${userWallet}`);
     };
 
   return (
     <div>
       <button className="Wallet-button d-block ml-auto" onClick={handleClickOpen}>{userWallet}
+      onChange={(e) => onUserWalletChange(e.target.value)}
       </button>
       <WalletDialog values={params} open={isOpen} onClose={handleClose} />
     </div>
@@ -176,10 +175,13 @@ function AssetMainDialog({ assets }) {
 }
 
 function MenuBar() {
+  const [userWallet, setUserWallet] = useState('Connect Wallet');
    return (
     <div className="Menu-bar">
       <img className="App-logo" src={logo} alt="LOKX.io" />
-      <MyWallet />
+      <MyWallet
+        userWallet={userWallet}
+        onUserWalletChange={setUserWallet}/>
       <AppSettings />
     </div>
   );
@@ -198,8 +200,12 @@ const ASSETS = [
   { assetName: "Deposit", assetConditions: "Escrow", assetRecipient: "$RENTAL", assetType: "USDA", data: "9-ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"  }
 ];
 
-export default function App() {
+const usersAssets = ["Asset 1", "Asset2", "Asset3", "Family Will and Testament"];
+const walletChoices = ["Eternl", "Nami", "Lace"];
 
+export default function App() {
+// user state for wallet
+const [userWallet, setUserWallet] = useState(null);
   return (
     <div className="App">
       <header>
