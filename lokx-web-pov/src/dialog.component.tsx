@@ -103,18 +103,6 @@ export function WalletDialog(props: SimpleDialogProps) {
           </ListItem>
         ))}
 
-        <ListItem
-          autoFocus
-          button
-          onClick={() => handleListItemClick("addWallet")}
-        >
-          <ListItemAvatar>
-            <Avatar>
-              <AddIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="New Wallet" />
-        </ListItem>
       </List>
     </Dialog>
   );

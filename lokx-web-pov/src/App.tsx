@@ -25,21 +25,26 @@ function MyWallet ({userWallet, onUserWalletChange}) {
 
   const handleClickOpen = async () => {
     // Option to pass list as params when modal opens
-    userWallet = await open(walletChoices);
-    alert(`Stub for Wallet dialog to be added. Wallet is set to ${userWallet}`);
+    onUserWalletChange(await open(walletChoices));
     };
 
   const handleClose = (value: string) => {
     close(value);
-    alert(`Stub for Wallet dialog to be added. Wallet is set to ${userWallet}`);
     };
 
   return (
     <div>
-      <button className="Wallet-button d-block ml-auto" onClick={handleClickOpen}>{userWallet}
-      onChange={(e) => onUserWalletChange(e.target.value)}
-      </button>
-      <WalletDialog values={params} open={isOpen} onClose={handleClose} />
+      <button
+        className="Wallet-button d-block ml-auto"
+        onClick={handleClickOpen}
+        >
+        {userWallet}
+        </button>
+      <WalletDialog
+        values={params}
+        open={isOpen}
+        onClose={handleClose}
+      />
     </div>
   );
 } 
@@ -65,7 +70,11 @@ function AddAsset() {
       <button className="Add-button d-block ml-auto mr-0" onClick={handleClickOpen}>
         Add Asset
       </button>
-      <SimpleDialog values={params} open={isOpen} onClose={handleClose} />
+      <SimpleDialog
+        values={params}
+        open={isOpen}
+        onClose={handleClose}
+      />
     </div>
   );
 };
@@ -175,13 +184,14 @@ function AssetMainDialog({ assets }) {
 }
 
 function MenuBar() {
-  const [userWallet, setUserWallet] = useState('Connect Wallet');
+  const [userWallet, setUserWallet] = useState('Connect Wallet!!');
    return (
     <div className="Menu-bar">
       <img className="App-logo" src={logo} alt="LOKX.io" />
       <MyWallet
         userWallet={userWallet}
-        onUserWalletChange={setUserWallet}/>
+        onUserWalletChange={setUserWallet}
+      />
       <AppSettings />
     </div>
   );
